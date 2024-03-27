@@ -59,3 +59,23 @@ function filterTasks(filter) {
 
 // Initial rendering of tasks
 renderTasks();
+
+const allButton = document.getElementById('allButton');
+const activeButton = document.getElementById('activeButton');
+const completedButton = document.getElementById('completedButton');
+
+allButton.addEventListener('click', () => {
+    allButton.classList.add('active');
+    activeButton.classList.remove('active');
+    completedButton.classList.remove('active');
+});
+activeButton.addEventListener('click', () => {
+    allButton.classList.remove('active');
+    activeButton.classList.add('active');
+    completedButton.classList.remove('active');
+});
+completedButton.addEventListener('click', () => {
+    allButton.classList.remove('active');
+    activeButton.classList.remove('active');
+    completedButton.classList.add('active');
+});
